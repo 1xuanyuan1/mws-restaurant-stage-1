@@ -84,3 +84,19 @@ Most of the code in this project has been written to the ES6 JavaScript specific
 ## restaurant.html 页面改动
 这个页面改动的比较大
 主要是用媒体查询 判断下宽度为1023及以下为移动设备，1024以上桌面设备
+
+
+# 使用serviceWorker的时候遇到了一个很大的问题 —— 监听不到fetch事件
+不知道为什么会出现这个问题，在之前练习项目中没有出现过。
+
+```JS
+/**
+ * 之前的sw.js文件没有在根目录下
+ * 这种情况下该serviceworker的作用域为 /js/ 
+ * 监听不到 / 下的网页
+ */
+navigator.serviceWorker.register('js/sw.js')
+
+// 把sw移出到根目录 代码改成如下即可
+navigator.serviceWorker.register('sw.js')
+```
