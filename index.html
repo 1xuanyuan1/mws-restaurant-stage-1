@@ -2,9 +2,37 @@
 <html>
 
 <head>
+  <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('js/sw.js').then(function() {
+        console.log('Registration worked!');
+      }).catch(function() {
+        console.log('Registration failed!');
+      });
+    }
+  });
+    
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <link rel="stylesheet" href="css/styles.css">
   <title>Restaurant Reviews</title>
+  <style>
+  #restaurants-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .filter-options{
+    height: auto;
+  }
+  .filter-options select {
+    width: auto;
+  }
+  </style>
 </head>
 
 <body>
@@ -34,13 +62,12 @@
 
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAa_Ki5nSR9PSeOsnBInntPrIsTeuxB3k&libraries=places&callback=initMap"></script>
 
 
   <footer id="footer">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
-
 </body>
 
 </html>
