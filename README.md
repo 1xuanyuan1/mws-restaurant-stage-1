@@ -100,3 +100,7 @@ navigator.serviceWorker.register('js/sw.js')
 // 把sw移出到根目录 代码改成如下即可
 navigator.serviceWorker.register('sw.js')
 ```
+
+# 其他
+
+> 第四关考核的知识点 居然是第二关中讲到的 这个安排是否有待改进
